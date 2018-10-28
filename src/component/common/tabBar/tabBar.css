@@ -15,16 +15,17 @@
     list-style: none;
 }
 
-#tabBar ul>li{
+#tabBar ul li{
     flex-grow:1;
     line-height:60px;
     text-align: center;
 }
 
-#tabBar ul>li>i{
+#tabBar ul li i{
     font-size:24px;
 }
 
-#tabBar ul>li>i.active{
+.active{
     color:#f00;
+    outline: none;
 }
