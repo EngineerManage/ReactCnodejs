@@ -16,7 +16,6 @@ export default class TabBarComponent extends Component {
   tabChange (num) {
     if (this.state.index === num) return;
     this.setState ({index: num});
-    console.log (this.props);
   }
 
   render () {

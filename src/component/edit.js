@@ -1,9 +1,16 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
+import TabBarComponent from './common/tabBar';
 
-class EditComponent extends Component{
-    render(){
+class EditComponent extends Component {
+    render() {
         return (
-            <div>edit</div>
+            <div>
+                <div className="main-box">
+                    EditComponent
+                </div>
+                <TabBarComponent />
+            </div>
+
         )
     }
 }

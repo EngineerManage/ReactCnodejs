@@ -1,0 +1,19 @@
+.tab-list{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab-list >li {
+    flex-grow: 1;
+    padding:5px;
+    list-style:none;
+    color:#333;
+    text-align: center;
+    border-bottom:1px solid #fff;
+}
+
+.tab-list > li.active{
+    color:#f00;
+    border-bottom: 1px solid #f00;
+}

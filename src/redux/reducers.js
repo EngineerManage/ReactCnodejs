@@ -4,9 +4,10 @@
 
 const initialState = {
   token: null,
+  tab: ''
 };
 
-export default function (state = initialState, action) {
+export default function OperateToken(state = initialState, action) {
   switch (action.type) {
     case 'ADD_TOKEN':
       return {
@@ -18,6 +19,11 @@ export default function (state = initialState, action) {
         ...state,
         token: action.token,
       };
+    case 'CHOOSE_TAB':
+      return {
+        ...state,
+        tab: action.tab
+      }
     default:
       return state;
   }

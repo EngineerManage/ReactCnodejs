@@ -1,23 +1,45 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import {Provider} from 'react-redux';
-import {BrowserRouter as Router} from 'react-router-dom';
-import store from './redux/store';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
-import TabBarComponent from './component/common/tabBar/tabBar';
-import MainBoxComponent from './component/common/mainBox/mainBox';
+import IndexComponent from './component/index';
+import EditComponent from './component/edit';
+import MessageComponent from './component/message';
+import MineComponent from './component/mine';
 
+const routes = [
+  {
+    path: '/index',
+    component: IndexComponent,
+  },
+  {
+    path: '/edit',
+    component: EditComponent,
+  },
+  {
+    path: '/message',
+    component: MessageComponent,
+  },
+  {
+    path: '/mine',
+    component: MineComponent,
+  },
+];
 class App extends Component {
-  render () {
+  render() {
     return (
-      <Provider store={store}>
+      <div>
         <Router>
-          <div className="App">
-            <MainBoxComponent />
-            <TabBarComponent />
-          </div>
+          <Switch>
+            {routes.map((item, index) => {
+              return (
+                <Route exact path={item.path} key={index} component={item.component} />
+              )
+            })}
+            <Redirect to="/index" />
+          </Switch>
         </Router>
-      </Provider>
+      </div>
     );
   }
 }

@@ -1,9 +1,15 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
+import TabBarComponent from './common/tabBar';
 
-class MessageComponent extends Component{
-    render(){
+class MessageComponent extends Component {
+    render() {
         return (
-            <div>message</div>
+            <div>
+                <div className="main-box">
+                MessageComponent
+                </div>
+                <TabBarComponent />
+            </div>
         )
     }
 }

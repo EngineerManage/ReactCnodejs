@@ -2,20 +2,23 @@
  * 添加/移除token
  */
 
-export function addToken (tokenData) {
+export function addToken(tokenData) {
   return {
     type: 'ADD_TOKEN',
-    payload: {
-      token: tokenData,
-    },
+    token: tokenData.token,
   };
 }
 
-export function removeToken () {
+export function removeToken() {
   return {
     type: 'REMOVE_TOKEN',
-    payload: {
-      token: null,
-    },
+    token: null
   };
+}
+
+export function chooseTab(value) {
+  return {
+    type: 'CHOOSE_TAB',
+    tab: value
+  }
 }
