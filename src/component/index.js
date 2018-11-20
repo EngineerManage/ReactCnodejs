@@ -83,10 +83,9 @@ class IndexComp extends Component {
 
     render() {
         return (
-            
+
             <div>
                 <div className="main-box">
-
                     <ul className="tab-list">
                         {this.state.tabList.map((item, index) => {
                             return (
