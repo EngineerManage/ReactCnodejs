@@ -83,6 +83,7 @@ class IndexComp extends Component {
 
     render() {
         return (
+            
             <div>
                 <div className="main-box">
 
