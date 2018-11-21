@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import * as http from '../api/http';
 
+import './styles/detail.css';
+
 export default class DetailComponent extends Component {
     constructor(props) {
         super(props);
