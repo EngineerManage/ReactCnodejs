@@ -7,6 +7,8 @@ import * as http from '../api/http';
 import './styles/index.css';
 import { chooseTab } from '../redux/action';
 
+import IndexViewComponent from '../component/common/indexView';
+
 const mapStateToProps = state => {
     return {
         tab: state.tab
@@ -35,7 +37,7 @@ class IndexComp extends Component {
             tabList: [
                 {
                     key: '全部',
-                    value: ''
+                    value: 'all'
                 }, {
                     key: '问答',
                     value: 'ask'
@@ -58,14 +60,28 @@ class IndexComp extends Component {
     }
 
     componentDidMount() {
+        this._updateScrollData();
+    }
 
+    // 监听scroll
+    _updateScrollData() {
+        let scroll = this.refs.scroll;
+        scroll.addEventListener('scroll', (e) => {
+            const dom = e.srcElement;
+            if (dom.scrollHeight < dom.clientHeight + dom.scrollTop + 1) {
+                //  加载下一页
+                this.setState({ postData: { ...this.state.postData, page: this.state.postData.page + 1 } }, () => {
+                    this.getData();
+                })
+            }
+        }, false);
     }
 
     //  获取数据
     getData() {
         http.getTopics(this.state.postData).then(
             response => {
-                this.setState({ listData: response.data });
+                this.setState({ listData: [].concat(this.state.listData, response.data) });
             }
         )
     }
@@ -75,18 +91,19 @@ class IndexComp extends Component {
         if (this.props.tab === value) {
             return;
         }
-        this.setState({ postData: { ...this.state.postData, tab: value } }, () => {
+        this.setState({ postData: { ...this.state.postData, tab: value, page: 1 } }, () => {
             this.props.chooseTab(value);
-            this.getData();
+            this.setState({ listData: [] }, () => {
+                this.getData();
+            })
         });
     }
 
     render() {
         return (
-
             <div>
-                <div className="main-box">
-                    <ul className="tab-list">
+                <div className="main-box" ref="scroll">
+                    <ul className="tab-list" style={{ position: 'fixed', top: 0, left: 0, width: '100%', backgroundColor: '#fff' }}>
                         {this.state.tabList.map((item, index) => {
                             return (
                                 <li
@@ -97,14 +114,13 @@ class IndexComp extends Component {
                             )
                         })}
                     </ul>
-
-                    {this.state.listData.map((item, index) => {
-                        return (
-                            <div key={index}>
-                                11
-                            </div>
-                        )
-                    })}
+                    <div className="indexView-box">
+                        {this.state.listData.map((item, index) => {
+                            return (
+                                <IndexViewComponent key={index} {...item} />
+                            )
+                        })}
+                    </div>
                 </div>
                 <TabBarComponent />
             </div>

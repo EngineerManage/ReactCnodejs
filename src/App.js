@@ -6,6 +6,7 @@ import IndexComponent from './component/index';
 import EditComponent from './component/edit';
 import MessageComponent from './component/message';
 import MineComponent from './component/mine';
+import DetailComponent from './component/detail';
 
 const routes = [
   {
@@ -24,6 +25,10 @@ const routes = [
     path: '/mine',
     component: MineComponent,
   },
+  {
+    path: '/detail/:id',
+    component: DetailComponent
+  }
 ];
 class App extends Component {
   render() {

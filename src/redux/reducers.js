@@ -4,7 +4,7 @@
 
 const initialState = {
   token: null,
-  tab: ''
+  tab: 'all'
 };
 
 export default function OperateToken(state = initialState, action) {
