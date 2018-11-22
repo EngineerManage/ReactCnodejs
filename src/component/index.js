@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TabBarComponent from './common/tabBar';
-
 import { connect } from 'react-redux';
 import * as http from '../api/http';
 
@@ -23,7 +22,7 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-class IndexComp extends Component {
+class IndexComp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

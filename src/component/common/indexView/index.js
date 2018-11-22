@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './index.css';
 
 import { BeforeDay } from '../../../shared/utils';
 
-export default class IndexViewComponent extends Component {
+export default class IndexViewComponent extends React.Component {
 
     render() {
         return (

@@ -2,3 +2,14 @@
   margin:0;
   padding:0;
 }
+
+.mask-box{
+  position: absolute;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:100%;
+  background-color:rgba(255,255,255,.9);
+  z-index:9999;
+}

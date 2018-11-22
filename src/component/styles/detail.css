@@ -18,3 +18,50 @@ p{
     text-overflow: ellipsis;
     margin:10px 0;
 }
+
+.detail-title{
+    margin:20px 10px;
+    padding:5px;
+    background-color:#f0f0f0;
+}
+
+.author-box{
+    box-sizing: border-box;
+    padding:10px;
+    width:100%;
+    display:flex;
+    align-items:center;
+}
+
+.author-box > img{
+    width:40px;
+    height:40px;
+    margin-right:10px;
+    border-radius:50%;
+}
+
+.author-box > .author-content{
+    flex-grow:1;
+}
+
+.author-box > .author-content > p{
+    display: flex;
+    align-items: center;
+    margin:0;
+}
+
+.author-box > .author-content > p > span{
+    font-size:12px;
+    color:#34495e;
+}
+
+.author-box > .author-content > p > span:first-child{
+    flex-grow:1;
+}
+
+.author-box > .author-content > p > span.type{
+    padding:2px 4px;
+    border-radius: 4px;
+    color:#fff;
+    background-color:#e74c3c;
+}

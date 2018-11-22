@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
@@ -30,7 +30,7 @@ const routes = [
     component: DetailComponent
   }
 ];
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div>
@@ -44,6 +44,9 @@ class App extends Component {
             <Redirect to="/index" />
           </Switch>
         </Router>
+        {/* <div className="mask-box">
+          <span>正在加载...</span>
+        </div> */}
       </div>
     );
   }

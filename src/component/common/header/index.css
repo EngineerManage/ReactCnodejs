@@ -1,0 +1,16 @@
+.header-box{
+    position:relative;
+    width:100%;
+    height:40px;
+    line-height:40px;
+    padding:0 10px;
+    text-align:center;
+    background-color:#eee;
+}
+
+.header-box > span{
+    position: absolute;
+    top:-2px;
+    left:10px;
+    font-size:30px;
+}
