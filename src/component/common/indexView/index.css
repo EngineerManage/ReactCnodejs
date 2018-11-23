@@ -15,14 +15,14 @@
     flex-shrink:0;
     width:35px;
     height:35px;
-    /* background-color:#333332; */
+    color:#fff;
+    background-color:#1a6706;
     border-radius:90%;
     margin-right:5px;
     text-align:center;
 }
 
 .title > .tips.active{
-    color:#fff;
     background-color:#00c4ff;
 }
 

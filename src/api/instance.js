@@ -45,30 +45,29 @@ export function get(url, body, type) {
  * @param type 请求类型
  * @param body 传递参数
  */
-// export function post(url, body, type) {
-//     if (typeof url !== 'string') {
-//         return;
-//     }
+export function post(url, body, type) {
+    if (typeof url !== 'string') {
+        return;
+    }
 
-//     if (!type) {
-//         type = 'application/json';
-//     }
+    if (!type) {
+        type = 'application/json';
+    }
 
-//     const headers = { 'Content-Type': type };
+    const headers = { 'Content-Type': type };
 
-//     window.fetch(url, {
-//         method: 'POST',
-//         headers,
-//         body: JSON.stringify(body)
-//     }).then(
-//         response => {
-//             if (response.status === 200) {
-//                 return new Promise(resolve => {
-//                     resolve(response.json());
-//                 })
-//             } else {
-//                 throw new Error(response.statusText);
-//             }
-//         }
-//     )
-// }
+    return new Promise((resolve, reject) => {
+        fetch(url, {
+            method: 'POST',
+            headers,
+            body: JSON.stringify(body)
+        }).then(
+            response => {
+                resolve(response.json());
+            },
+            err => {
+                reject(err);
+            }
+        )
+    })
+}

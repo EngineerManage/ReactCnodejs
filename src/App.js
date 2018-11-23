@@ -7,6 +7,7 @@ import EditComponent from './component/edit';
 import MessageComponent from './component/message';
 import MineComponent from './component/mine';
 import DetailComponent from './component/detail';
+import LoginComponent from './component/login';
 
 const routes = [
   {
@@ -28,6 +29,10 @@ const routes = [
   {
     path: '/detail/:id',
     component: DetailComponent
+  },
+  {
+    path: '/login',
+    component: LoginComponent
   }
 ];
 class App extends React.Component {

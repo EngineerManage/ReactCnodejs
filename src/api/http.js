@@ -1,4 +1,4 @@
-import { get } from './instance';
+import { get, post } from './instance';
 
 const origin = 'https://cnodejs.org/api/v1';
 /**
@@ -24,4 +24,14 @@ export function getDetail(id, token) {
     const data = { mdrender: true, accesstoken: token ? token : '' }
     const url = `${origin}/topic/${id}`;
     return get(url, data);
+}
+
+/**
+ * 收藏主题
+ * @param accesstoken token
+ * @param topic_id 主题id
+ */
+export function colletTopic(id, token) {
+    const url = `${origin}/topic_collect/collect`;
+    return post(url, { accesstoken: token, topic_id: id });
 }

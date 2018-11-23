@@ -6,10 +6,24 @@ import { BeforeDay } from '../../../shared/utils';
 export default class IndexViewComponent extends React.Component {
 
     render() {
+        const filterName = (name) => {
+            switch (name) {
+                case 'ask':
+                    return '问答';
+                case 'share':
+                    return '分享';
+                case 'job':
+                    return '招聘';
+                case 'good':
+                    return '精华';
+                default:
+                    return '';
+            }
+        }
         return (
             <div className="box">
                 <div className="title">
-                    {this.props.top ? (<div className="tips active">TOP</div>) : (<div className="tips"></div>)}
+                    {this.props.top ? (<div className="tips active">置顶</div>) : (<div className="tips">{filterName(this.props.tab)}</div>)}
                     <span className="title-content"><a href={'/detail/' + this.props.id}>{this.props.title}</a></span>
                 </div>
                 <div className="box-content">

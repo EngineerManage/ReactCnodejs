@@ -2,6 +2,10 @@ img{
     width:100%;
 }
 
+.detail-box{
+    padding-top:40px;
+}
+
 .markdown-text{
     padding:10px;
     color:#2c3e50;
@@ -64,4 +68,65 @@ p{
     border-radius: 4px;
     color:#fff;
     background-color:#e74c3c;
+}
+
+
+.reply{
+    margin:5px 10px;
+    border-top:1px solid #eee;
+}
+
+.reply-title{
+    height:30px;
+    line-height:30px;
+}
+
+.reply-title .reply-count{
+    color:#42b983;
+    margin:0 2px;
+}
+
+.reply-person{
+    padding:10px 0;
+}
+
+.reply-person img{
+    width:45px;
+    height:45px;
+    border-radius:10px;
+}
+
+.reply-content{
+    margin:10px;
+    border:1px solid #eee;
+    border-left:none;
+    border-right:none;
+}
+
+.person-data{
+    display:flex;
+}
+
+.person-data > div{
+    flex-grow:1;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:14px;
+    color:#626262;
+}
+
+.person-data > div > span{
+    width:auto;
+    margin:0 4px;
+}
+
+.person-data > div > .operate{
+    flex-grow:1;
+    text-align:right;
+}
+
+.person-data > div > .operate > span{
+    margin:0 4px;
+    color:#5d0a0a;
 }
